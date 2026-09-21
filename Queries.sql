@@ -150,3 +150,47 @@
 -- select * from employee where salary between (select avg(salary) from employee ) and (select max(salary) from employee);
 -- select * from employee where salary != (select max(salary) from employee);
 -- select * from employee where salary != (select min(salary) from employee);
+-- show tables;
+-- select * from employee;
+
+-- views
+-- A View is a virtual table created from one or more SQL queries.
+
+-- create view IT_employees as select * from employee where dept ='IT';
+-- select * from IT_employees;
+ -- create view high_paid as select * from employee where salary > 60000;
+-- select * from high_paid;
+-- CREATE VIEW Employee_Public AS SELECT emp_id, emp_name, dept FROM employee;
+-- select * from Employee_Public;
+
+-- select * from employee;
+-- show tables;
+-- select * from department;
+
+-- VIEWS WITH JOINS 
+
+-- create view employee_department as select e.emp_name,d.deptid,d.dept from employee e join department d  on e.dept =d.dept;
+-- select * from employee_department;
+
+-- create view it_hr_employees as select e.emp_id,e.emp_name,d.dept_id from employee e join department d on e.dept=d.dept where e.department in('IT','HR'); 
+-- select * from it_hr_employees;
+-- desc employee;
+-- desc department;
+
+-- 							indexing concept
+-- use practice;
+-- desc employee;
+-- select * from employee;
+-- create index index_name on employee(emp_name);
+-- select  * from employee where emp_name='Pavan';
+-- desc employee;
+
+-- create table movies(movies_id int primary key,title varchar(100),genre varchar(100),language varchar(100),release_year int,collection varchar(100);
+-- select * from movies;
+
+-- 			STORED PROCEDURES ----
+--  select * from movies;
+-- delimiter // 
+-- create procedure getalltitles() begin  select * from movies; end // delimiter ;
+-- call getalltitle;
+
